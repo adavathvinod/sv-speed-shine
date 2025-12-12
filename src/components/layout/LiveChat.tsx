@@ -1,7 +1,9 @@
-import { useState } from "react";
-import { MessageCircle, X, Send, Bot } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { MessageCircle, X, Send, Bot, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 interface Message {
   id: number;
@@ -9,46 +11,62 @@ interface Message {
   isBot: boolean;
 }
 
-const quickResponses: Record<string, string> = {
-  "pricing": "Our pricing varies by vehicle size:\n• Hatchback: Starting ₹3,999\n• Sedan: Starting ₹5,999\n• SUV: Starting ₹7,999\n\nVisit our Services page for detailed packages!",
-  "ppf": "PPF (Paint Protection Film) protects your car from scratches, stone chips & UV damage. Prices start at ₹15,000 for partial coverage. Full car PPF starts at ₹45,000.",
-  "ceramic": "Ceramic Coating provides 3-5 years of protection with hydrophobic properties. Prices: ₹8,999 - ₹24,999 depending on your vehicle size.",
-  "booking": "You can book an appointment through our Booking page or WhatsApp us at +91 80191 30798. We're available 7 days a week!",
-  "location": "We're located in Hyderabad. Click the location button on the right side of the screen for Google Maps directions!",
-  "time": "Service times vary:\n• Basic wash: 1-2 hours\n• Detailing: 4-6 hours\n• Ceramic Coating: 1-2 days\n• PPF: 2-4 days",
-  "default": "Thanks for reaching out! For immediate assistance, please WhatsApp us at +91 80191 30798 or call directly. Our team will be happy to help!"
-};
-
-const getResponse = (input: string): string => {
-  const lower = input.toLowerCase();
-  if (lower.includes("price") || lower.includes("cost") || lower.includes("how much")) return quickResponses.pricing;
-  if (lower.includes("ppf") || lower.includes("protection film")) return quickResponses.ppf;
-  if (lower.includes("ceramic") || lower.includes("coating")) return quickResponses.ceramic;
-  if (lower.includes("book") || lower.includes("appointment")) return quickResponses.booking;
-  if (lower.includes("where") || lower.includes("location") || lower.includes("address")) return quickResponses.location;
-  if (lower.includes("time") || lower.includes("long") || lower.includes("duration")) return quickResponses.time;
-  return quickResponses.default;
-};
-
 const LiveChat = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { id: 1, text: "Hi! 👋 Welcome to SV CARZ SPA. How can I help you today?\n\nAsk about:\n• Pricing & Packages\n• PPF / Ceramic Coating\n• Booking appointments\n• Service duration", isBot: true }
+    { id: 1, text: "Hi! 👋 Welcome to SV CARZ SPA. I'm your AI assistant. Ask me about:\n\n• Services & Pricing\n• PPF / Ceramic / Graphene Coating\n• Booking appointments\n• Service duration\n• Our packages", isBot: true }
   ]);
   const [input, setInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const { toast } = useToast();
 
-  const sendMessage = () => {
-    if (!input.trim()) return;
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
+
+  const sendMessage = async () => {
+    if (!input.trim() || isLoading) return;
 
     const userMessage: Message = { id: Date.now(), text: input, isBot: false };
     setMessages(prev => [...prev, userMessage]);
+    const userInput = input;
     setInput("");
+    setIsLoading(true);
 
-    // Simulate bot response
-    setTimeout(() => {
-      const botMessage: Message = { id: Date.now() + 1, text: getResponse(input), isBot: true };
+    try {
+      const { data, error } = await supabase.functions.invoke('chat-ai', {
+        body: { message: userInput }
+      });
+
+      if (error) throw error;
+
+      const botMessage: Message = { 
+        id: Date.now() + 1, 
+        text: data.response || data.error || "I couldn't process that. Please try again.", 
+        isBot: true 
+      };
       setMessages(prev => [...prev, botMessage]);
-    }, 800);
+    } catch (error) {
+      console.error('Chat error:', error);
+      toast({
+        variant: "destructive",
+        title: "Connection Error",
+        description: "Unable to connect. Please try WhatsApp at +91 80191 30798."
+      });
+      const errorMessage: Message = { 
+        id: Date.now() + 1, 
+        text: "I'm having trouble connecting. Please try again or contact us via WhatsApp at +91 80191 30798.", 
+        isBot: true 
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -72,8 +90,8 @@ const LiveChat = () => {
               <Bot className="h-5 w-5" />
             </div>
             <div>
-              <h3 className="font-bold">SV CARZ Support</h3>
-              <p className="text-xs opacity-80">Usually replies instantly</p>
+              <h3 className="font-bold">SV CARZ AI Assistant</h3>
+              <p className="text-xs opacity-80">Powered by AI • Always ready</p>
             </div>
           </div>
           <button onClick={() => setIsOpen(false)} className="hover:bg-primary-foreground/20 p-2 rounded-full transition-colors">
@@ -94,6 +112,14 @@ const LiveChat = () => {
               </div>
             </div>
           ))}
+          {isLoading && (
+            <div className="flex justify-start">
+              <div className="bg-card text-card-foreground rounded-2xl rounded-tl-none p-3">
+                <Loader2 className="h-5 w-5 animate-spin text-primary" />
+              </div>
+            </div>
+          )}
+          <div ref={messagesEndRef} />
         </div>
 
         {/* Input */}
@@ -101,12 +127,13 @@ const LiveChat = () => {
           <Input
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
-            placeholder="Type your message..."
+            onKeyDown={(e) => e.key === 'Enter' && !isLoading && sendMessage()}
+            placeholder="Ask about services, pricing..."
             className="flex-1"
+            disabled={isLoading}
           />
-          <Button onClick={sendMessage} size="icon" className="shrink-0">
-            <Send className="h-4 w-4" />
+          <Button onClick={sendMessage} size="icon" className="shrink-0" disabled={isLoading}>
+            {isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
           </Button>
         </div>
       </div>
