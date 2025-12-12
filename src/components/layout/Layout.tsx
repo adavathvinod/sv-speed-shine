@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import FloatingButtons from "./FloatingButtons";
 import MusicPlayer from "./MusicPlayer";
+import LiveChat from "./LiveChat";
 
 interface LayoutProps {
   children: ReactNode;
@@ -16,6 +17,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Footer />
       <FloatingButtons />
       <MusicPlayer />
+      <LiveChat />
     </div>
   );
 };

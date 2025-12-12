@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ChevronRight, Star, Shield, Sparkles, Droplets, Award, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import VideoTestimonials from "@/components/VideoTestimonials";
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
@@ -281,6 +282,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Video Testimonials */}
+      <VideoTestimonials />
 
       {/* CTA Section */}
       <section className="py-20 bg-primary">
