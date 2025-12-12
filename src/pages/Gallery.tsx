@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Layout from "@/components/layout/Layout";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import gallery1 from "@/assets/gallery-1.jpeg";
 import gallery2 from "@/assets/gallery-2.jpeg";
 import gallery3 from "@/assets/gallery-3.jpeg";
@@ -8,6 +9,10 @@ import gallery5 from "@/assets/gallery-5.jpeg";
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
+import before1 from "@/assets/before-1.jpg";
+import after1 from "@/assets/after-1.jpg";
+import before2 from "@/assets/before-2.jpg";
+import after2 from "@/assets/after-2.jpg";
 
 const galleryImages = [
   { src: gallery1, category: "Interior", title: "Hexagon LED Detailing Bay" },
@@ -18,6 +23,21 @@ const galleryImages = [
   { src: hero1, category: "Detailing", title: "Lamborghini Urus Detailing" },
   { src: hero2, category: "Ceramic", title: "BMW M4 Ceramic Coating" },
   { src: hero3, category: "PPF", title: "Audi RS7 PPF Installation" },
+];
+
+const beforeAfterComparisons = [
+  {
+    before: before1,
+    after: after1,
+    title: "Exterior Paint Correction",
+    category: "Exterior",
+  },
+  {
+    before: before2,
+    after: after2,
+    title: "Interior Deep Cleaning",
+    category: "Interior",
+  },
 ];
 
 const categories = ["All", "Exterior", "Interior", "Detailing", "Ceramic", "PPF"];
@@ -44,8 +64,30 @@ const Gallery = () => {
         </div>
       </section>
 
+      {/* Before/After Comparisons */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <span className="text-primary font-semibold tracking-widest">TRANSFORMATIONS</span>
+            <h2 className="font-display text-4xl md:text-5xl mt-2">BEFORE & AFTER</h2>
+            <p className="text-muted-foreground mt-2">Drag the slider to see the transformation</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {beforeAfterComparisons.map((comparison, index) => (
+              <BeforeAfterSlider
+                key={index}
+                beforeImage={comparison.before}
+                afterImage={comparison.after}
+                title={comparison.title}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Category Filter */}
-      <section className="py-8 bg-background border-b border-border sticky top-20 z-40">
+      <section className="py-8 bg-card border-y border-border sticky top-20 z-40">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (

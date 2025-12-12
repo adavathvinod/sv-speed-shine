@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/sv-carz-logo.png";
 
 const Footer = () => {
   return (
@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-4">
-            <img src={logo} alt="SV CARZ SPA" className="h-20 w-auto" />
+            <img src={logo} alt="SV CARZ SPA - Shine & Smile" className="h-20 w-auto" />
             <p className="text-muted-foreground">
               Hyderabad's premier car detailing studio. We bring showroom shine to every vehicle.
             </p>

@@ -2,6 +2,7 @@ import { Shield, Sparkles, Droplets, Car, Paintbrush, Wrench, Check } from "luci
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import PricingCalculator from "@/components/PricingCalculator";
 
 const services = [
   {
@@ -114,8 +115,21 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Packages */}
+      {/* Pricing Calculator */}
       <section className="py-20 bg-card">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <span className="text-primary font-semibold tracking-widest">INSTANT QUOTE</span>
+            <h2 className="font-display text-4xl md:text-5xl mt-2">GET YOUR ESTIMATE</h2>
+          </div>
+          <div className="max-w-5xl mx-auto">
+            <PricingCalculator />
+          </div>
+        </div>
+      </section>
+
+      {/* Packages */}
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <span className="text-primary font-semibold tracking-widest">VALUE PACKAGES</span>
