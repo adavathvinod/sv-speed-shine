@@ -1,0 +1,55 @@
+import { Phone, MapPin, MessageCircle, Instagram, Facebook } from "lucide-react";
+
+const FloatingButtons = () => {
+  const buttons = [
+    {
+      icon: <MessageCircle className="h-6 w-6" />,
+      href: "https://wa.me/918019130798",
+      label: "WhatsApp",
+      color: "bg-[hsl(142,70%,45%)]",
+    },
+    {
+      icon: <Phone className="h-6 w-6" />,
+      href: "tel:+918019130798",
+      label: "Call",
+      color: "bg-primary",
+    },
+    {
+      icon: <MapPin className="h-6 w-6" />,
+      href: "https://maps.google.com/?q=SV+CARZ+SPA+Hasthinapuram+Hyderabad",
+      label: "Location",
+      color: "bg-[hsl(210,80%,50%)]",
+    },
+    {
+      icon: <Instagram className="h-6 w-6" />,
+      href: "https://instagram.com/svcarz",
+      label: "Instagram",
+      color: "bg-gradient-to-br from-[hsl(330,70%,50%)] to-[hsl(30,90%,55%)]",
+    },
+    {
+      icon: <Facebook className="h-6 w-6" />,
+      href: "https://facebook.com/svcarz",
+      label: "Facebook",
+      color: "bg-[hsl(220,65%,50%)]",
+    },
+  ];
+
+  return (
+    <div className="fixed right-4 bottom-24 z-50 flex flex-col gap-3">
+      {buttons.map((button) => (
+        <a
+          key={button.label}
+          href={button.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={button.label}
+          className={`${button.color} h-14 w-14 rounded-full flex items-center justify-center text-primary-foreground shadow-lg hover:scale-110 transition-transform duration-300 animate-pulse-glow`}
+        >
+          {button.icon}
+        </a>
+      ))}
+    </div>
+  );
+};
+
+export default FloatingButtons;
