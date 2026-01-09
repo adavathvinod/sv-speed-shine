@@ -1,5 +1,6 @@
-import { useState } from "react";
 import { Play, Star, Quote } from "lucide-react";
+
+const INSTAGRAM_URL = "https://www.instagram.com/sv_carz_spa/reels/";
 
 interface Testimonial {
   id: number;
@@ -9,7 +10,6 @@ interface Testimonial {
   rating: number;
   quote: string;
   videoThumbnail: string;
-  videoUrl: string;
 }
 
 const testimonials: Testimonial[] = [
@@ -21,7 +21,6 @@ const testimonials: Testimonial[] = [
     rating: 5,
     quote: "Absolutely stunning results! My BMW looks better than showroom condition. The ceramic coating is incredible.",
     videoThumbnail: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=400&h=300&fit=crop",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
     id: 2,
@@ -31,7 +30,6 @@ const testimonials: Testimonial[] = [
     rating: 5,
     quote: "Best investment for my Audi! The PPF is invisible and the team's attention to detail is unmatched.",
     videoThumbnail: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=400&h=300&fit=crop",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
     id: 3,
@@ -41,12 +39,13 @@ const testimonials: Testimonial[] = [
     rating: 5,
     quote: "The graphene coating has transformed my Mercedes. Water beads off like magic. Highly recommend SV CARZ!",
     videoThumbnail: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=400&h=300&fit=crop",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   }
 ];
 
 const VideoTestimonials = () => {
-  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+  const handleVideoClick = () => {
+    window.open(INSTAGRAM_URL, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <section className="py-20 bg-secondary">
@@ -72,7 +71,7 @@ const VideoTestimonials = () => {
               {/* Video Thumbnail */}
               <div 
                 className="relative aspect-video cursor-pointer overflow-hidden"
-                onClick={() => setActiveVideo(testimonial.videoUrl)}
+                onClick={handleVideoClick}
               >
                 <img 
                   src={testimonial.videoThumbnail}
@@ -121,22 +120,6 @@ const VideoTestimonials = () => {
         </div>
       </div>
 
-      {/* Video Modal */}
-      {activeVideo && (
-        <div 
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
-          onClick={() => setActiveVideo(null)}
-        >
-          <div className="relative w-full max-w-4xl aspect-video">
-            <iframe
-              src={activeVideo + "?autoplay=1"}
-              className="w-full h-full rounded-lg"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-            />
-          </div>
-        </div>
-      )}
     </section>
   );
 };
