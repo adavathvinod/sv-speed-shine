@@ -1,6 +1,6 @@
 import { Play, Star, Quote } from "lucide-react";
 
-const INSTAGRAM_URL = "https://www.instagram.com/sv_carz_spa/reels/";
+const YOUTUBE_URL = "https://youtube.com/shorts/TeOavs83xJc?si=4U_iVAaidtUpIIjG";
 
 interface Testimonial {
   id: number;
@@ -44,7 +44,7 @@ const testimonials: Testimonial[] = [
 
 const VideoTestimonials = () => {
   const handleVideoClick = () => {
-    window.open(INSTAGRAM_URL, "_blank", "noopener,noreferrer");
+    window.open(YOUTUBE_URL, "_blank", "noopener,noreferrer");
   };
 
   return (
