@@ -19,7 +19,7 @@ const testimonials: Testimonial[] = [
     service: "Full Ceramic Coating",
     rating: 5,
     quote: "Absolutely stunning results! My BMW looks better than showroom condition. The ceramic coating is incredible.",
-    videoThumbnail: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=400&h=300&fit=crop",
+    videoThumbnail: "https://img.youtube.com/vi/TeOavs83xJc/maxresdefault.jpg",
     videoUrl: "https://youtube.com/shorts/TeOavs83xJc?si=vunqVysSfPFa5QJo",
   },
   {
@@ -29,7 +29,7 @@ const testimonials: Testimonial[] = [
     service: "PPF + Detailing",
     rating: 5,
     quote: "Best investment for my Audi! The PPF is invisible and the team's attention to detail is unmatched.",
-    videoThumbnail: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=400&h=300&fit=crop",
+    videoThumbnail: "https://img.youtube.com/vi/xC_FxAzQrSs/maxresdefault.jpg",
     videoUrl: "https://youtube.com/shorts/xC_FxAzQrSs?si=7go5tkIogvdj_Nab",
   },
   {
@@ -39,7 +39,7 @@ const testimonials: Testimonial[] = [
     service: "Graphene Coating",
     rating: 5,
     quote: "The graphene coating has transformed my Mercedes. Water beads off like magic. Highly recommend SV CARZ!",
-    videoThumbnail: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=400&h=300&fit=crop",
+    videoThumbnail: "https://img.youtube.com/vi/ajr6msZjVk0/maxresdefault.jpg",
     videoUrl: "https://youtube.com/shorts/ajr6msZjVk0?si=D6uH1wqzxlyBy9UL",
   }
 ];
