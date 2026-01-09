@@ -1,7 +1,5 @@
 import { Play, Star, Quote } from "lucide-react";
 
-const YOUTUBE_URL = "https://youtube.com/shorts/TeOavs83xJc?si=4U_iVAaidtUpIIjG";
-
 interface Testimonial {
   id: number;
   name: string;
@@ -10,6 +8,7 @@ interface Testimonial {
   rating: number;
   quote: string;
   videoThumbnail: string;
+  videoUrl: string;
 }
 
 const testimonials: Testimonial[] = [
@@ -21,6 +20,7 @@ const testimonials: Testimonial[] = [
     rating: 5,
     quote: "Absolutely stunning results! My BMW looks better than showroom condition. The ceramic coating is incredible.",
     videoThumbnail: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=400&h=300&fit=crop",
+    videoUrl: "https://youtube.com/shorts/TeOavs83xJc?si=vunqVysSfPFa5QJo",
   },
   {
     id: 2,
@@ -30,6 +30,7 @@ const testimonials: Testimonial[] = [
     rating: 5,
     quote: "Best investment for my Audi! The PPF is invisible and the team's attention to detail is unmatched.",
     videoThumbnail: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=400&h=300&fit=crop",
+    videoUrl: "https://youtube.com/shorts/xC_FxAzQrSs?si=7go5tkIogvdj_Nab",
   },
   {
     id: 3,
@@ -39,12 +40,13 @@ const testimonials: Testimonial[] = [
     rating: 5,
     quote: "The graphene coating has transformed my Mercedes. Water beads off like magic. Highly recommend SV CARZ!",
     videoThumbnail: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=400&h=300&fit=crop",
+    videoUrl: "https://youtube.com/shorts/ajr6msZjVk0?si=D6uH1wqzxlyBy9UL",
   }
 ];
 
 const VideoTestimonials = () => {
-  const handleVideoClick = () => {
-    window.open(YOUTUBE_URL, "_blank", "noopener,noreferrer");
+  const handleVideoClick = (url: string) => {
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -71,7 +73,7 @@ const VideoTestimonials = () => {
               {/* Video Thumbnail */}
               <div 
                 className="relative aspect-video cursor-pointer overflow-hidden"
-                onClick={handleVideoClick}
+                onClick={() => handleVideoClick(testimonial.videoUrl)}
               >
                 <img 
                   src={testimonial.videoThumbnail}
