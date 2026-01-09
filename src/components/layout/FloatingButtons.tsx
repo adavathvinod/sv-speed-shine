@@ -22,7 +22,7 @@ const FloatingButtons = () => {
     },
     {
       icon: <Instagram className="h-6 w-6" />,
-      href: "https://instagram.com/svcarz",
+      href: "https://instagram.com/sv_carz_spa",
       label: "Instagram",
       color: "bg-gradient-to-br from-[hsl(330,70%,50%)] to-[hsl(30,90%,55%)]",
     },
