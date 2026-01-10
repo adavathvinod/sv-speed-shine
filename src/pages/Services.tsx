@@ -37,7 +37,7 @@ const services = [
     icon: <Paintbrush className="h-12 w-12" />,
     title: "Interior Detailing",
     description: "Deep cleaning and conditioning of all interior surfaces including leather, fabric, and plastics.",
-    features: ["Steam cleaning", "Leather conditioning", "Odor removal", "Sanitization"],
+    features: ["Foam wash", "AC foam cleaning", "Leather conditioning", "Sanitization"],
     price: "Starting ₹2,500",
   },
   {
@@ -53,18 +53,18 @@ const packages = [
   {
     name: "Essential",
     price: "₹4,999",
-    features: ["Exterior wash", "Interior vacuum", "Dashboard polish", "Tire dressing"],
+    features: ["Trim restorer", "Interior vacuum", "Dashboard polish", "Tire dressing"],
     popular: false,
   },
   {
     name: "Premium",
     price: "₹9,999",
-    features: ["Full exterior detail", "Interior deep clean", "Paint correction (1 stage)", "Ceramic spray coating", "Engine bay cleaning"],
+    features: ["Full exterior detail", "Interior deep clean", "Paint correction (2 stage)", "Ceramic spray coating", "Engine bay cleaning"],
     popular: true,
   },
   {
     name: "Ultimate",
-    price: "₹24,999",
+    price: "₹34,999",
     features: ["Complete PPF package", "Ceramic coating", "Full interior restoration", "Headlight restoration", "1-year maintenance"],
     popular: false,
   },

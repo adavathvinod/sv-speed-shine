@@ -7,6 +7,7 @@ import logo from "@/assets/sv-carz-logo.png";
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "Services", path: "/services" },
+  { name: "Tyres", path: "/tyres" },
   { name: "Gallery", path: "/gallery" },
   { name: "About", path: "/about" },
   { name: "Contact", path: "/contact" },
