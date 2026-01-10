@@ -1,4 +1,4 @@
-import { Phone, MapPin, MessageCircle, Instagram, Facebook } from "lucide-react";
+import { Phone, MapPin, MessageCircle, Instagram } from "lucide-react";
 
 const FloatingButtons = () => {
   const buttons = [
@@ -25,12 +25,6 @@ const FloatingButtons = () => {
       href: "https://instagram.com/sv_carz_spa",
       label: "Instagram",
       color: "bg-gradient-to-br from-[hsl(330,70%,50%)] to-[hsl(30,90%,55%)]",
-    },
-    {
-      icon: <Facebook className="h-6 w-6" />,
-      href: "https://facebook.com/svcarz",
-      label: "Facebook",
-      color: "bg-[hsl(220,65%,50%)]",
     },
   ];
 
