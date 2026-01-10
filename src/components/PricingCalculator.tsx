@@ -31,7 +31,7 @@ const services: Service[] = [
   { id: "ceramic", name: "Ceramic Coating", basePrice: 10000, description: "3-year protection" },
   { id: "graphene", name: "Graphene Coating", basePrice: 15000, description: "5-year protection" },
   { id: "ppf-partial", name: "PPF (Front Only)", basePrice: 60000, description: "Hood, bumper, fenders" },
-  { id: "ppf-full", name: "PPF (Full Body)", basePrice: 120000, description: "Complete protection" },
+  { id: "ppf-full", name: "PPF (Full Body)", basePrice: 120000, description: "Package" },
 ];
 
 const PricingCalculator = () => {
