@@ -26,12 +26,12 @@ const carTypes: CarType[] = [
 
 const services: Service[] = [
   { id: "wash", name: "Premium Wash", basePrice: 500, description: "Foam wash + interior vacuum" },
-  { id: "exterior", name: "Exterior Detailing", basePrice: 3000, description: "Paint correction + polish" },
+  { id: "exterior", name: "Exterior Detailing", basePrice: 3500, description: "Paint correction + polish" },
   { id: "interior", name: "Interior Detailing", basePrice: 2500, description: "Deep clean + conditioning" },
-  { id: "ceramic", name: "Ceramic Coating", basePrice: 15000, description: "5-year protection" },
-  { id: "graphene", name: "Graphene Coating", basePrice: 20000, description: "7-year protection" },
-  { id: "ppf-partial", name: "PPF (Front Only)", basePrice: 25000, description: "Hood, bumper, fenders" },
-  { id: "ppf-full", name: "PPF (Full Body)", basePrice: 80000, description: "Complete protection" },
+  { id: "ceramic", name: "Ceramic Coating", basePrice: 10000, description: "3-year protection" },
+  { id: "graphene", name: "Graphene Coating", basePrice: 15000, description: "5-year protection" },
+  { id: "ppf-partial", name: "PPF (Front Only)", basePrice: 60000, description: "Hood, bumper, fenders" },
+  { id: "ppf-full", name: "PPF (Full Body)", basePrice: 120000, description: "Complete protection" },
 ];
 
 const PricingCalculator = () => {
