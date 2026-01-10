@@ -9,14 +9,14 @@ const services = [
     icon: <Shield className="h-12 w-12" />,
     title: "Paint Protection Film (PPF)",
     description: "Ultimate protection against stone chips, scratches, and road debris. Our premium PPF maintains your car's showroom finish.",
-    features: ["Self-healing technology", "10-year warranty", "UV protection", "Invisible finish"],
+    features: ["Upto 10 years warranty", "200mm thickness", "Hydrophobic", "Easy removable"],
     price: "Starting ₹25,000",
   },
   {
     icon: <Sparkles className="h-12 w-12" />,
     title: "Ceramic Coating",
     description: "Long-lasting hydrophobic coating that provides deep gloss and protection against environmental contaminants.",
-    features: ["5-year protection", "Hydrophobic effect", "Enhanced gloss", "Easy maintenance"],
+    features: ["3 years warranty", "Hydrophobic effect", "Enhanced gloss", "Easy maintenance"],
     price: "Starting ₹15,000",
   },
   {
