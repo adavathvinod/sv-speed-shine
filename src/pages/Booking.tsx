@@ -14,6 +14,7 @@ const services = [
   "Exterior Detailing",
   "Full Car Wash",
   "Paint Correction",
+  "Wheel Alignment & Balancing",
   "Other",
 ];
 
