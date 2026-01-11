@@ -80,7 +80,7 @@ const Contact = () => {
               <h2 className="font-display text-3xl tracking-wider mb-8">VISIT US</h2>
               <div className="space-y-6">
                 <a
-                  href="https://maps.google.com/?q=SV+CARZ+SPA+Hasthinapuram+Hyderabad"
+                  href="https://maps.google.com/?q=SV+CARZ+SPA+Padmavathi+Nagar+Hasthinapuram+Hyderabad"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-4 p-4 rounded-lg gradient-card border border-border hover:border-primary transition-all group"
@@ -89,8 +89,8 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold group-hover:text-primary transition-colors">Address</h3>
                     <p className="text-muted-foreground">
-                      Beside Ragavendra Hotel, Hasthinapuram,<br />
-                      Hyderabad, Telangana 500079
+                      Plot No: 1, Beside Raghavendra Tiffins and Navvena Hospital,<br />
+                      Padmavathi Nagar, Hasthinapuram, Hyderabad
                     </p>
                     <span className="text-primary text-sm">Click to open in Google Maps →</span>
                   </div>
@@ -135,13 +135,13 @@ const Contact = () => {
             <div>
               <h2 className="font-display text-3xl tracking-wider mb-8">FIND US</h2>
               <a
-                href="https://maps.google.com/?q=SV+CARZ+SPA+Hasthinapuram+Hyderabad"
+                href="https://maps.google.com/?q=SV+CARZ+SPA+Padmavathi+Nagar+Hasthinapuram+Hyderabad"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block relative rounded-lg overflow-hidden border border-border hover:border-primary transition-all group aspect-[4/3]"
               >
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.7626533736444!2d78.54879661487755!3d17.361752688073677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99c1f0bfffff%3A0x2e58f4e6b9bf4fb!2sHasthinapuram%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1650000000000!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.753778417283!2d78.55306907438697!3d17.327425104531244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcba38038bd099f%3A0x8720d275a522db48!2sSV%20CARZ%20SPA%20%7C%20PPF%20%7C%20Ceramic%20%7C%20Graphene%20%7C%20Car%20Decor!5e0!3m2!1sen!2sin!4v1768116199694!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
