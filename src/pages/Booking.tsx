@@ -184,7 +184,7 @@ const Booking = () => {
                         <button
                           key={time}
                           type="button"
-                          onClick={() => setFormData({ ...formData, time })}
+                          onClick={() => setFormData({ ...formData, time: formData.time === time ? "" : time })}
                           className={`p-2 rounded text-sm font-medium transition-all duration-300 ${
                             formData.time === time
                               ? "bg-primary text-primary-foreground"
