@@ -144,7 +144,7 @@ const Booking = () => {
                         <button
                           key={service}
                           type="button"
-                          onClick={() => setFormData({ ...formData, service })}
+                          onClick={() => setFormData({ ...formData, service: formData.service === service ? "" : service })}
                           className={`p-3 rounded-lg text-sm font-medium transition-all duration-300 ${
                             formData.service === service
                               ? "bg-primary text-primary-foreground"
