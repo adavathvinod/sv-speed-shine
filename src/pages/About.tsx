@@ -46,7 +46,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="text-primary font-semibold tracking-widest">SHINE & SMILE</span>
+              <span className="text-primary font-display font-bold tracking-widest text-lg">SHINE & SMILE</span>
               <h2 className="font-display text-4xl md:text-5xl mt-2 mb-6">WHY CHOOSE US</h2>
               <div className="space-y-4 text-muted-foreground text-lg">
                 <p>
