@@ -62,7 +62,7 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
                 <span className="text-muted-foreground">
-                  Beside Ragavendra Hotel, Hasthinapuram, Hyderabad
+                  Plot No: 1, Beside Raghavendra Tiffins and Navvena Hospital, Padmavathi Nagar, Hasthinapuram, Hyderabad
                 </span>
               </li>
               <li className="flex items-center gap-3">
