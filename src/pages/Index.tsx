@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ChevronRight, Star, Shield, Sparkles, Droplets, Award, Users } from "lucide-react";
+import { ChevronRight, Star, Shield, Sparkles, Droplets, Award, Users, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import VideoTestimonials from "@/components/VideoTestimonials";
@@ -151,6 +151,21 @@ const Index = () => {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Address Section */}
+      <section className="py-4 bg-card border-b border-border">
+        <div className="container mx-auto px-4">
+          <a
+            href="https://maps.google.com/?q=SV+CARZ+SPA+Padmavathi+Nagar+Hasthinapuram+Hyderabad"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-3 text-muted-foreground hover:text-primary transition-colors"
+          >
+            <MapPin className="h-5 w-5 text-primary" />
+            <span>Plot No: 1, Beside Raghavendra Tiffins and Navvena Hospital, Padmavathi Nagar, Hasthinapuram, Hyderabad</span>
+          </a>
         </div>
       </section>
 
@@ -316,7 +331,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { number: "500+", label: "Cars Detailed" },
+              { number: "1500+", label: "Cars Detailed" },
               { number: "4.7★", label: "Google Rating" },
               { number: "5+", label: "Years Experience" },
               { number: "100%", label: "Satisfaction" },

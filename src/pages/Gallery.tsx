@@ -6,6 +6,11 @@ import gallery2 from "@/assets/gallery-2.jpeg";
 import gallery3 from "@/assets/gallery-3.jpeg";
 import gallery4 from "@/assets/gallery-4.jpeg";
 import gallery5 from "@/assets/gallery-5.jpeg";
+import gallery6 from "@/assets/gallery-6.png";
+import gallery7 from "@/assets/gallery-7.png";
+import gallery8 from "@/assets/gallery-8.png";
+import gallery9 from "@/assets/gallery-9.png";
+import gallery10 from "@/assets/gallery-10.png";
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
@@ -20,6 +25,11 @@ const galleryImages = [
   { src: gallery3, category: "Detailing", title: "SUV Under Inspection Lights" },
   { src: gallery4, category: "Exterior", title: "Mahindra Thar Fleet" },
   { src: gallery5, category: "Exterior", title: "Premium Cars at SV CARZ" },
+  { src: gallery6, category: "Detailing", title: "Keeway 302 - Custom Detailing" },
+  { src: gallery7, category: "Ceramic", title: "Tata Harrier - Ceramic Coating" },
+  { src: gallery8, category: "PPF", title: "Mahindra BE 6 - PPF Protection" },
+  { src: gallery9, category: "PPF", title: "Ford Endeavour - Full PPF" },
+  { src: gallery10, category: "Detailing", title: "Jawa 42 - Premium Polish" },
   { src: hero1, category: "Detailing", title: "Lamborghini Urus Detailing" },
   { src: hero2, category: "Ceramic", title: "BMW M4 Ceramic Coating" },
   { src: hero3, category: "PPF", title: "Audi RS7 PPF Installation" },
