@@ -87,7 +87,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border mt-12 pt-8 text-center text-muted-foreground">
-          <p>© 2026 SV CARZ SPA. All rights reserved. | <a href="https://wimira.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">wimira.com</a></p>
+          <p>© 2026 SV CARZ SPA. All rights reserved. | <a href="http://wimira.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">wimira.com</a></p>
         </div>
       </div>
     </footer>
