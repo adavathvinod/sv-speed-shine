@@ -26,6 +26,7 @@ const Footer = () => {
               {[
                 { name: "Home", path: "/" },
                 { name: "Services", path: "/services" },
+                { name: "Tyres", path: "/tyres" },
                 { name: "Gallery", path: "/gallery" },
                 { name: "Book Appointment", path: "/booking" },
                 { name: "Contact", path: "/contact" },
@@ -86,7 +87,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border mt-12 pt-8 text-center text-muted-foreground">
-          <p>© {new Date().getFullYear()} SV CARZ SPA. All rights reserved. | Shine & Smile</p>
+          <p>© 2026 SV CARZ SPA. All rights reserved. | <a href="https://wimira.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">wimira.com</a></p>
         </div>
       </div>
     </footer>
