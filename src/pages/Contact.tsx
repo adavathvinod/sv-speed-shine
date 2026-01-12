@@ -112,9 +112,9 @@ const Contact = () => {
                   className="flex items-start gap-4 p-4 rounded-lg gradient-card border border-border hover:border-primary transition-all group"
                 >
                   <Mail className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                  <div>
+                <div>
                     <h3 className="font-semibold group-hover:text-primary transition-colors">Email</h3>
-                    <p className="text-muted-foreground">info@svcarz.com</p>
+                    <p className="text-muted-foreground">svcarz98@gmail.com</p>
                   </div>
                 </a>
 
