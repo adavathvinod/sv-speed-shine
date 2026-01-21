@@ -2,6 +2,9 @@ import { Circle, Wrench, Wind, Gauge, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import tyresHero from "@/assets/tyres-hero.jpg";
+import wheelBalancing from "@/assets/wheel-balancing.jpg";
+import tyreBrandsImage from "@/assets/tyre-brands.jpg";
 
 const services = [
   {
@@ -45,8 +48,12 @@ const Tyres = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-20 bg-card">
-        <div className="container mx-auto px-4 text-center">
+      <section className="relative py-20 bg-card overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={tyresHero} alt="Wheel alignment service" className="w-full h-full object-cover opacity-30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
+        </div>
+        <div className="container mx-auto px-4 text-center relative z-10">
           <span className="text-primary font-semibold tracking-widest">TYRE SERVICES</span>
           <h1 className="font-display text-5xl md:text-6xl mt-2 mb-4">WHEEL & TYRE CARE</h1>
           <p className="text-muted-foreground text-xl max-w-2xl mx-auto">
@@ -58,9 +65,17 @@ const Tyres = () => {
       {/* Services Grid */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <span className="text-primary font-semibold tracking-widest">OUR SERVICES</span>
-            <h2 className="font-display text-4xl md:text-5xl mt-2">WHAT WE OFFER</h2>
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <span className="text-primary font-semibold tracking-widest">OUR SERVICES</span>
+              <h2 className="font-display text-4xl md:text-5xl mt-2 mb-4">WHAT WE OFFER</h2>
+              <p className="text-muted-foreground">
+                From precision wheel alignment to professional tyre care, we provide comprehensive services to keep your vehicle running smoothly and safely.
+              </p>
+            </div>
+            <div className="rounded-lg overflow-hidden shadow-card">
+              <img src={wheelBalancing} alt="Wheel balancing service" className="w-full h-80 object-cover" />
+            </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service) => (
@@ -92,12 +107,17 @@ const Tyres = () => {
       {/* Tyre Brands */}
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <span className="text-primary font-semibold tracking-widest">PREMIUM BRANDS</span>
-            <h2 className="font-display text-4xl md:text-5xl mt-2">TYRES WE SERVICE</h2>
-            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              We work with all major tyre brands to provide you the best service and genuine parts.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            <div className="rounded-lg overflow-hidden shadow-card order-2 lg:order-1">
+              <img src={tyreBrandsImage} alt="Premium tyre brands" className="w-full h-80 object-cover" />
+            </div>
+            <div className="order-1 lg:order-2">
+              <span className="text-primary font-semibold tracking-widest">PREMIUM BRANDS</span>
+              <h2 className="font-display text-4xl md:text-5xl mt-2 mb-4">TYRES WE SERVICE</h2>
+              <p className="text-muted-foreground">
+                We work with all major tyre brands to provide you the best service and genuine parts.
+              </p>
+            </div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             {tyreBrands.map((brand) => (
