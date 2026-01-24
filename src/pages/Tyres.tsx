@@ -10,24 +10,31 @@ const services = [
   {
     icon: <Gauge className="h-12 w-12" />,
     title: "Wheel Alignment",
+    price: "₹800",
     description: "Precision computerized wheel alignment to ensure optimal tire wear and vehicle handling.",
     features: ["Computerized alignment", "Camber adjustment", "Toe adjustment", "Caster correction"],
   },
   {
     icon: <Circle className="h-12 w-12" />,
     title: "Wheel Balancing",
+    price: "₹400",
+    priceNote: "per wheel",
     description: "High-precision wheel balancing to eliminate vibrations and ensure smooth driving.",
     features: ["Dynamic balancing", "Static balancing", "Weight optimization", "Vibration elimination"],
   },
   {
     icon: <Wrench className="h-12 w-12" />,
     title: "Tyre Puncture Repair",
+    price: "₹150",
+    priceNote: "onwards",
     description: "Professional puncture repair using industry-standard methods for long-lasting results.",
     features: ["Tubeless repair", "Tube repair", "Sidewall inspection", "Pressure check"],
   },
   {
     icon: <Wind className="h-12 w-12" />,
     title: "Nitrogen Filling",
+    price: "₹50",
+    priceNote: "per tyre",
     description: "Nitrogen inflation for better tire pressure retention and improved fuel efficiency.",
     features: ["99% pure nitrogen", "Better pressure retention", "Reduced oxidation", "Improved mileage"],
   },
@@ -86,9 +93,15 @@ const Tyres = () => {
                 <div className="text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
                   {service.icon}
                 </div>
-                <h3 className="font-display text-xl tracking-wider mb-3">
+                <h3 className="font-display text-xl tracking-wider mb-1">
                   {service.title}
                 </h3>
+                <div className="flex items-baseline gap-1 mb-3">
+                  <span className="text-2xl font-bold text-primary">{service.price}</span>
+                  {service.priceNote && (
+                    <span className="text-sm text-muted-foreground">{service.priceNote}</span>
+                  )}
+                </div>
                 <p className="text-muted-foreground mb-6 text-sm">{service.description}</p>
                 <ul className="space-y-2">
                   {service.features.map((feature) => (
