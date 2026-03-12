@@ -1,4 +1,4 @@
-import { Shield, Sparkles, Droplets, Car, Paintbrush, Wrench, Check } from "lucide-react";
+import { Shield, Sparkles, Droplets, Car, Paintbrush, Wrench, Check, Sofa, Palette, Sun } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
@@ -20,31 +20,31 @@ const services = [
     price: "Starting ₹10,000",
   },
   {
-    icon: <Droplets className="h-12 w-12" />,
-    title: "Graphene Coating",
-    description: "Next-generation nano coating with superior durability and heat dissipation properties.",
-    features: ["5 years warranty", "Heat resistant", "Anti-static", "Ultra-hydrophobic"],
-    price: "Starting ₹15,000",
+    icon: <Sofa className="h-12 w-12" />,
+    title: "Custom Seat Covers",
+    description: "Premium custom-fit seat covers designed to match your vehicle's interior and provide lasting comfort.",
+    features: ["Custom fit design", "Premium materials", "Multiple colors", "Durable finish"],
+    price: "Contact for pricing",
   },
   {
     icon: <Car className="h-12 w-12" />,
-    title: "Exterior Detailing",
-    description: "Complete exterior restoration including paint correction, polishing, and protection.",
-    features: ["Paint correction", "Swirl removal", "Clay bar treatment", "Wax protection"],
-    price: "Starting ₹3,500",
-  },
-  {
-    icon: <Paintbrush className="h-12 w-12" />,
-    title: "Interior Detailing",
-    description: "Deep cleaning and conditioning of all interior surfaces including leather, fabric, and plastics.",
-    features: ["Foam wash", "AC foam cleaning", "Leather conditioning", "Sanitization"],
+    title: "Interior Spa & Cleaning",
+    description: "Complete interior deep cleaning, sanitization, and conditioning for a fresh cabin experience.",
+    features: ["Deep cleaning", "AC foam cleaning", "Dashboard polish", "Sanitization"],
     price: "Starting ₹2,500",
   },
   {
-    icon: <Wrench className="h-12 w-12" />,
-    title: "Car Decor & Accessories",
-    description: "Custom wraps, alloy wheels, accessories, and wheel alignment services.",
-    features: ["Custom wraps", "Alloy wheels", "Accessories", "Wheel alignment"],
+    icon: <Sun className="h-12 w-12" />,
+    title: "Window Tinting",
+    description: "Legal black tinting for UV protection, heat reduction, and enhanced privacy and style.",
+    features: ["Legal tint levels", "UV protection", "Heat reduction", "Enhanced privacy"],
+    price: "Starting ₹3,000",
+  },
+  {
+    icon: <Palette className="h-12 w-12" />,
+    title: "Custom Wrapping & Decor",
+    description: "Custom vehicle wraps, car matting, mud flaps, accessories, and denting & painting services.",
+    features: ["Custom wraps", "Car matting", "Mud flaps", "Denting & painting"],
     price: "Contact for pricing",
   },
 ];
@@ -53,7 +53,7 @@ const packages = [
   {
     name: "Essential",
     price: "₹4,999",
-    features: ["Trim restorer", "Interior vacuum", "Dashboard polish", "Tire dressing"],
+    features: ["Exterior wash", "Interior vacuum", "Dashboard polish", "Tire dressing"],
     popular: false,
   },
   {
@@ -79,7 +79,7 @@ const Services = () => {
           <span className="text-primary font-semibold tracking-widest">PREMIUM CAR CARE</span>
           <h1 className="font-display text-5xl md:text-6xl mt-2 mb-4">OUR SERVICES</h1>
           <p className="text-muted-foreground text-xl max-w-2xl mx-auto">
-            Professional detailing services for luxury and high-end vehicles. We use only the finest products and techniques.
+            Professional detailing and customization services. We use only the finest products and techniques.
           </p>
         </div>
       </section>
@@ -194,7 +194,7 @@ const Services = () => {
                 Book Appointment
               </Button>
             </Link>
-            <a href="tel:+918019130798">
+            <a href="tel:+917780762489">
               <Button variant="heroOutline" size="xl" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
                 Call Now
               </Button>

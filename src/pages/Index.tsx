@@ -5,28 +5,28 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import VideoTestimonials from "@/components/VideoTestimonials";
 import InstagramFeed from "@/components/InstagramFeed";
-import hero1 from "@/assets/hero-1.jpg";
-import hero2 from "@/assets/hero-2.jpg";
-import hero3 from "@/assets/hero-3.jpg";
-import gallery1 from "@/assets/gallery-1.jpeg";
-import gallery2 from "@/assets/gallery-2.jpeg";
-import gallery3 from "@/assets/gallery-3.jpeg";
+import skHero1 from "@/assets/sk-hero-1.png";
+import skGallery1 from "@/assets/sk-gallery-1.png";
+import skGallery2 from "@/assets/sk-gallery-2.png";
+import skGallery3 from "@/assets/sk-gallery-3.png";
+import skGallery4 from "@/assets/sk-gallery-4.png";
+import skGallery5 from "@/assets/sk-gallery-5.png";
 
 const heroSlides = [
   {
-    image: hero1,
-    title: "ULTIMATE CAR DETAILING",
-    subtitle: "Premium PPF & Ceramic Coating",
+    image: skHero1,
+    title: "PREMIUM CAR DETAILING",
+    subtitle: "Expert PPF, Ceramic Coating & Customization",
   },
   {
-    image: hero2,
-    title: "SHOWROOM SHINE",
-    subtitle: "Expert Polish & Protection",
+    image: skGallery2,
+    title: "DETAILING STUDIO",
+    subtitle: "Professional Care for Every Vehicle",
   },
   {
-    image: hero3,
+    image: skGallery3,
     title: "PROTECT YOUR INVESTMENT",
-    subtitle: "Graphene & Paint Protection Film",
+    subtitle: "Paint Protection Film & Ceramic Coating",
   },
 ];
 
@@ -43,30 +43,30 @@ const services = [
   },
   {
     icon: <Droplets className="h-10 w-10" />,
-    title: "Graphene Coating",
-    description: "Next-gen nano coating technology",
+    title: "Interior Spa",
+    description: "Deep interior cleaning & conditioning",
   },
   {
     icon: <Award className="h-10 w-10" />,
-    title: "Interior Detailing",
-    description: "Deep cleaning & sanitization",
+    title: "Custom Seat Covers",
+    description: "Premium custom-fit seat covers",
   },
 ];
 
 const reviews = [
   {
-    name: "Rahul Kumar",
-    text: "Excellent service! My BMW looks brand new after the ceramic coating.",
+    name: "Google Reviewer",
+    text: "Very professional work and the service is awesome at affordable price.",
     rating: 5,
   },
   {
-    name: "Priya Sharma",
-    text: "Very good quality paint protection. Highly recommended!",
+    name: "Satisfied Customer",
+    text: "Good communication and great skills on bike and car's.",
     rating: 5,
   },
   {
-    name: "Vijay Reddy",
-    text: "Professional team with great knowledge on all vehicle types.",
+    name: "Happy Client",
+    text: "Excellent service and quality work.",
     rating: 5,
   },
 ];
@@ -104,7 +104,7 @@ const Index = () => {
           <div className="container mx-auto px-4">
             <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
               <span className="inline-block px-6 py-2 border border-primary text-primary text-sm tracking-widest mb-6">
-                HYDERABAD'S PREMIER CAR SPA
+                HYDERABAD'S PREMIUM DETAILING STUDIO
               </span>
             </div>
             <h1
@@ -158,13 +158,13 @@ const Index = () => {
       <section className="py-4 bg-card border-b border-border">
         <div className="container mx-auto px-4">
           <a
-            href="https://maps.google.com/?q=SV+CARZ+SPA+Padmavathi+Nagar+Hasthinapuram+Hyderabad"
+            href="https://maps.google.com/?q=SK+Carz+Detaling+Studio+Hastinapuram+Hyderabad"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-3 text-muted-foreground hover:text-primary transition-colors"
           >
             <MapPin className="h-5 w-5 text-primary" />
-            <span>Plot No: 1, Beside Raghavendra Tiffins and Navvena Hospital, Padmavathi Nagar, Hasthinapuram, Hyderabad</span>
+            <span>215, ZP Rd, Valmiki Ambedkar Awas Yojana, Sriramana Colony, Hastinapuram, Hyderabad, Telangana 500079</span>
           </a>
         </div>
       </section>
@@ -178,14 +178,12 @@ const Index = () => {
                 {[1, 2, 3, 4, 5].map((star) => (
                   <Star
                     key={star}
-                    className={`h-6 w-6 ${
-                      star <= 4 ? "fill-primary-foreground text-primary-foreground" : "fill-primary-foreground/50 text-primary-foreground/50"
-                    }`}
+                    className="h-6 w-6 fill-primary-foreground text-primary-foreground"
                   />
                 ))}
               </div>
-              <span className="font-display text-3xl text-primary-foreground">4.7</span>
-              <span className="text-primary-foreground/80">(35 Reviews)</span>
+              <span className="font-display text-3xl text-primary-foreground">5.0</span>
+              <span className="text-primary-foreground/80">(Google Reviews)</span>
             </div>
             <div className="text-primary-foreground font-display text-xl tracking-wider">
               GOOGLE VERIFIED REVIEWS
@@ -239,7 +237,7 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[gallery1, gallery2, gallery3].map((image, index) => (
+            {[skGallery1, skGallery3, skGallery5].map((image, index) => (
               <div
                 key={index}
                 className="relative overflow-hidden rounded-lg aspect-[4/3] group"
@@ -309,7 +307,7 @@ const Index = () => {
             READY TO TRANSFORM YOUR CAR?
           </h2>
           <p className="text-primary-foreground/80 text-xl mb-8">
-            Book your appointment today and experience the SV CARZ difference
+            Book your appointment today and experience the SK CARZ difference
           </p>
           <Link to="/booking">
             <Button
@@ -331,9 +329,9 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { number: "1500+", label: "Cars Detailed" },
-              { number: "4.7★", label: "Google Rating" },
-              { number: "5+", label: "Years Experience" },
+              { number: "500+", label: "Cars Detailed" },
+              { number: "5.0★", label: "Google Rating" },
+              { number: "3+", label: "Years Experience" },
               { number: "100%", label: "Satisfaction" },
             ].map((stat) => (
               <div key={stat.label}>

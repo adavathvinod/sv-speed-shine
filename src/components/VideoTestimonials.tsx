@@ -1,4 +1,5 @@
 import { Play, Star, Quote } from "lucide-react";
+import { useState, useRef } from "react";
 
 interface Testimonial {
   id: number;
@@ -7,46 +8,58 @@ interface Testimonial {
   service: string;
   rating: number;
   quote: string;
-  videoThumbnail: string;
-  videoUrl: string;
+  videoSrc: string;
 }
 
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Rajesh Kumar",
-    car: "BMW 5 Series",
-    service: "Full Ceramic Coating",
+    name: "Happy Customer",
+    car: "Premium Vehicle",
+    service: "Full Detailing",
     rating: 5,
-    quote: "Absolutely stunning results! My BMW looks better than showroom condition. The ceramic coating is incredible.",
-    videoThumbnail: "https://img.youtube.com/vi/TeOavs83xJc/maxresdefault.jpg",
-    videoUrl: "https://youtube.com/shorts/TeOavs83xJc?si=vunqVysSfPFa5QJo",
+    quote: "Very professional work and the service is awesome at affordable price.",
+    videoSrc: "/videos/sk-video-1.mp4",
   },
   {
     id: 2,
-    name: "Priya Sharma",
-    car: "Audi Q7",
-    service: "PPF + Detailing",
+    name: "Satisfied Client",
+    car: "Luxury Car",
+    service: "Ceramic Coating",
     rating: 5,
-    quote: "Best investment for my Audi! The PPF is invisible and the team's attention to detail is unmatched.",
-    videoThumbnail: "https://img.youtube.com/vi/xC_FxAzQrSs/maxresdefault.jpg",
-    videoUrl: "https://youtube.com/shorts/xC_FxAzQrSs?si=7go5tkIogvdj_Nab",
+    quote: "Good communication and great skills on bike and car's.",
+    videoSrc: "/videos/sk-video-2.mp4",
   },
   {
     id: 3,
-    name: "Mohammed Syed",
-    car: "Mercedes GLE",
-    service: "Graphene Coating",
+    name: "Loyal Customer",
+    car: "SUV",
+    service: "PPF Protection",
     rating: 5,
-    quote: "The graphene coating has transformed my Mercedes. Water beads off like magic. Highly recommend SV CARZ!",
-    videoThumbnail: "https://img.youtube.com/vi/ajr6msZjVk0/maxresdefault.jpg",
-    videoUrl: "https://youtube.com/shorts/ajr6msZjVk0?si=D6uH1wqzxlyBy9UL",
+    quote: "Excellent service and quality work.",
+    videoSrc: "/videos/sk-video-3.mp4",
   }
 ];
 
 const VideoTestimonials = () => {
-  const handleVideoClick = (url: string) => {
-    window.open(url, "_blank", "noopener,noreferrer");
+  const [playingId, setPlayingId] = useState<number | null>(null);
+  const videoRefs = useRef<{ [key: number]: HTMLVideoElement | null }>({});
+
+  const handleVideoClick = (id: number) => {
+    const video = videoRefs.current[id];
+    if (!video) return;
+
+    if (playingId === id) {
+      video.pause();
+      setPlayingId(null);
+    } else {
+      // Pause any currently playing video
+      if (playingId && videoRefs.current[playingId]) {
+        videoRefs.current[playingId]?.pause();
+      }
+      video.play();
+      setPlayingId(id);
+    }
   };
 
   return (
@@ -70,21 +83,27 @@ const VideoTestimonials = () => {
               key={testimonial.id}
               className="bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 group"
             >
-              {/* Video Thumbnail */}
+              {/* Video */}
               <div 
-                className="relative aspect-video cursor-pointer overflow-hidden"
-                onClick={() => handleVideoClick(testimonial.videoUrl)}
+                className="relative aspect-[9/16] max-h-[400px] cursor-pointer overflow-hidden"
+                onClick={() => handleVideoClick(testimonial.id)}
               >
-                <img 
-                  src={testimonial.videoThumbnail}
-                  alt={`${testimonial.name}'s ${testimonial.car}`}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                <video
+                  ref={(el) => { videoRefs.current[testimonial.id] = el; }}
+                  src={testimonial.videoSrc}
+                  className="w-full h-full object-cover"
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
                 />
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/50 transition-colors">
-                  <div className="h-16 w-16 bg-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Play className="h-8 w-8 text-primary-foreground ml-1" fill="currentColor" />
+                {playingId !== testimonial.id && (
+                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/50 transition-colors">
+                    <div className="h-16 w-16 bg-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Play className="h-8 w-8 text-primary-foreground ml-1" fill="currentColor" />
+                    </div>
                   </div>
-                </div>
+                )}
                 <div className="absolute top-4 left-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
                   {testimonial.service}
                 </div>
@@ -121,7 +140,6 @@ const VideoTestimonials = () => {
           ))}
         </div>
       </div>
-
     </section>
   );
 };

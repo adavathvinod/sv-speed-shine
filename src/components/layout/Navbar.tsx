@@ -2,12 +2,11 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/sv-carz-logo.png";
+import logo from "@/assets/sk-carz-logo.png";
 
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "Services", path: "/services" },
-  { name: "Tyres", path: "/tyres" },
   { name: "Gallery", path: "/gallery" },
   { name: "About", path: "/about" },
   { name: "Contact", path: "/contact" },
@@ -23,7 +22,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="SV CARZ SPA - Shine & Smile" className="h-16 w-auto" />
+            <img src={logo} alt="SK CARZ Detailing Studio" className="h-16 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -45,9 +44,9 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
-            <a href="tel:+918019130798" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+            <a href="tel:+917780762489" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
               <Phone className="h-4 w-4" />
-              <span className="font-semibold">+91 80191 30798</span>
+              <span className="font-semibold">+91 77807 62489</span>
             </a>
             <Link to="/booking">
               <Button variant="hero" size="lg">
