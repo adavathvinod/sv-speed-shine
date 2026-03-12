@@ -31,8 +31,8 @@ const Contact = () => {
       return;
     }
 
-    const message = `Hi SV CARZ!\n\nName: ${contactForm.name}\nPhone: ${contactForm.phone}\nEmail: ${contactForm.email}\n\nMessage: ${contactForm.message}`;
-    window.open(`https://wa.me/918019130798?text=${encodeURIComponent(message)}`, "_blank");
+    const message = `Hi SK CARZ!\n\nName: ${contactForm.name}\nPhone: ${contactForm.phone}\nEmail: ${contactForm.email}\n\nMessage: ${contactForm.message}`;
+    window.open(`https://wa.me/917780762489?text=${encodeURIComponent(message)}`, "_blank");
     
     toast({
       title: "Message Sent!",
@@ -80,7 +80,7 @@ const Contact = () => {
               <h2 className="font-display text-3xl tracking-wider mb-8">VISIT US</h2>
               <div className="space-y-6">
                 <a
-                  href="https://maps.google.com/?q=SV+CARZ+SPA+Padmavathi+Nagar+Hasthinapuram+Hyderabad"
+                  href="https://maps.google.com/?q=SK+Carz+Detaling+Studio+Hastinapuram+Hyderabad"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-4 p-4 rounded-lg gradient-card border border-border hover:border-primary transition-all group"
@@ -89,32 +89,32 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold group-hover:text-primary transition-colors">Address</h3>
                     <p className="text-muted-foreground">
-                      Plot No: 1, Beside Raghavendra Tiffins and Navvena Hospital,<br />
-                      Padmavathi Nagar, Hasthinapuram, Hyderabad
+                      215, ZP Rd, Valmiki Ambedkar Awas Yojana,<br />
+                      Sriramana Colony, Hastinapuram, Hyderabad, Telangana 500079
                     </p>
                     <span className="text-primary text-sm">Click to open in Google Maps →</span>
                   </div>
                 </a>
 
                 <a
-                  href="tel:+918019130798"
+                  href="tel:+917780762489"
                   className="flex items-start gap-4 p-4 rounded-lg gradient-card border border-border hover:border-primary transition-all group"
                 >
                   <Phone className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold group-hover:text-primary transition-colors">Phone</h3>
-                    <p className="text-muted-foreground">+91 80191 30798</p>
+                    <p className="text-muted-foreground">+91 77807 62489</p>
                   </div>
                 </a>
 
                 <a
-                  href="mailto:info@svcarz.com"
+                  href="mailto:skcarz@gmail.com"
                   className="flex items-start gap-4 p-4 rounded-lg gradient-card border border-border hover:border-primary transition-all group"
                 >
                   <Mail className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                <div>
+                  <div>
                     <h3 className="font-semibold group-hover:text-primary transition-colors">Email</h3>
-                    <p className="text-muted-foreground">svcarz98@gmail.com</p>
+                    <p className="text-muted-foreground">skcarz@gmail.com</p>
                   </div>
                 </a>
 
@@ -134,14 +134,9 @@ const Contact = () => {
             {/* Map */}
             <div>
               <h2 className="font-display text-3xl tracking-wider mb-8">FIND US</h2>
-              <a
-                href="https://maps.google.com/?q=SV+CARZ+SPA+Padmavathi+Nagar+Hasthinapuram+Hyderabad"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block relative rounded-lg overflow-hidden border border-border hover:border-primary transition-all group aspect-[4/3]"
-              >
+              <div className="block relative rounded-lg overflow-hidden border border-border hover:border-primary transition-all group aspect-[4/3]">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.753778417283!2d78.55306907438697!3d17.327425104531244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcba38038bd099f%3A0x8720d275a522db48!2sSV%20CARZ%20SPA%20%7C%20PPF%20%7C%20Ceramic%20%7C%20Graphene%20%7C%20Car%20Decor!5e0!3m2!1sen!2sin!4v1768116199694!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.723155480826!2d78.54026967494609!3d17.3289015835484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcba3007edd4829%3A0xc7def1ceb423ef37!2sSK%20Carz%20Detaling%20Studio!5e0!3m2!1sen!2sin!4v1773326852376!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -150,12 +145,7 @@ const Contact = () => {
                   referrerPolicy="no-referrer-when-downgrade"
                   className="absolute inset-0"
                 />
-                <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <span className="bg-primary text-primary-foreground px-4 py-2 rounded font-semibold">
-                    Open in Google Maps
-                  </span>
-                </div>
-              </a>
+              </div>
             </div>
           </div>
         </div>

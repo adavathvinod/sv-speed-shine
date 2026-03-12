@@ -14,7 +14,7 @@ interface Message {
 const LiveChat = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { id: 1, text: "Hi! 👋 Welcome to SV CARZ SPA. I'm your AI assistant. Ask me about:\n\n• Services & Pricing\n• PPF / Ceramic / Graphene Coating\n• Booking appointments\n• Service duration\n• Our packages", isBot: true }
+    { id: 1, text: "Hi! 👋 Welcome to SK CARZ Detailing Studio. I'm your AI assistant. Ask me about:\n\n• Services & Pricing\n• PPF / Ceramic Coating\n• Seat Covers & Accessories\n• Booking appointments\n• Service duration\n• Our packages", isBot: true }
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -56,11 +56,11 @@ const LiveChat = () => {
       toast({
         variant: "destructive",
         title: "Connection Error",
-        description: "Unable to connect. Please try WhatsApp at +91 80191 30798."
+        description: "Unable to connect. Please try WhatsApp at +91 77807 62489."
       });
       const errorMessage: Message = { 
         id: Date.now() + 1, 
-        text: "I'm having trouble connecting. Please try again or contact us via WhatsApp at +91 80191 30798.", 
+        text: "I'm having trouble connecting. Please try again or contact us via WhatsApp at +91 77807 62489.", 
         isBot: true 
       };
       setMessages(prev => [...prev, errorMessage]);
@@ -90,7 +90,7 @@ const LiveChat = () => {
               <Bot className="h-5 w-5" />
             </div>
             <div>
-              <h3 className="font-bold">SV CARZ AI Assistant</h3>
+              <h3 className="font-bold">SK CARZ AI Assistant</h3>
               <p className="text-xs opacity-80">Powered by AI • Always ready</p>
             </div>
           </div>

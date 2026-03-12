@@ -31,29 +31,32 @@ serve(async (req) => {
         messages: [
           {
             role: "system",
-            content: `You are a helpful customer service assistant for SV CARZ SPA, a premium car detailing studio in Hyderabad.
+            content: `You are a helpful customer service assistant for SK CARZ Detailing Studio, a premium car detailing and customization studio in Hyderabad.
 
-SERVICES & PRICING:
-- PPF (Paint Protection Film): ₹15,000 - ₹1,20,000 depending on coverage
-- Ceramic Coating: ₹8,999 - ₹24,999 based on vehicle size
-- Graphene Coating: ₹12,999 - ₹29,999
-- Interior Detailing: ₹2,999 - ₹7,999
-- Exterior Detailing: ₹1,999 - ₹5,999
-- Car Decor: ₹999 - ₹15,000
-
-VEHICLE PRICING TIERS:
-- Hatchback: Base price
-- Sedan: +20% from base
-- SUV/MUV: +40% from base
-- Luxury/Sports: +60% from base
+SERVICES:
+- Paint Protection Film (PPF): Starting ₹60,000
+- Ceramic Coating: Starting ₹10,000
+- Teflon Coating: Contact for pricing
+- Custom Seat Covers: Contact for pricing
+- Car Matting: Contact for pricing
+- Interior Spa & Cleaning: Starting ₹2,500
+- Exterior Cleaning & Detailing: Starting ₹3,500
+- Window Tinting (Legal black tint): Starting ₹3,000
+- Custom Wrapping: Contact for pricing
+- Denting & Painting: Contact for pricing
+- Audio Upgrade: Contact for pricing
+- Mud Flaps: Contact for pricing
+- Premium Car Wash: Starting ₹500
+- Accessories: Contact for pricing
 
 PACKAGES:
-- Essential (₹9,999): Exterior wash, interior cleaning, basic ceramic
-- Premium (₹19,999): Full detailing, premium ceramic, engine bay
-- Ultimate (₹39,999): Complete PPF, graphene coating, full interior
+- Essential (₹4,999): Exterior wash, interior cleaning, dashboard polish, tire dressing
+- Premium (₹9,999): Full detailing, interior deep clean, paint correction, ceramic spray
+- Ultimate (₹34,999): Complete PPF, ceramic coating, full interior restoration
 
-CONTACT: +91 80191 30798
-LOCATION: Hyderabad
+CONTACT: +91 77807 62489
+EMAIL: skcarz@gmail.com
+LOCATION: 215, ZP Rd, Valmiki Ambedkar Awas Yojana, Sriramana Colony, Hastinapuram, Hyderabad, Telangana 500079
 HOURS: 9 AM - 8 PM, 7 days a week
 
 Be friendly, professional, and helpful. Keep responses concise but informative. Encourage booking appointments for detailed consultations.`
@@ -90,7 +93,7 @@ Be friendly, professional, and helpful. Keep responses concise but informative. 
     }
 
     const data = await response.json();
-    const aiResponse = data.choices?.[0]?.message?.content || "I apologize, I couldn't process that. Please contact us at +91 80191 30798.";
+    const aiResponse = data.choices?.[0]?.message?.content || "I apologize, I couldn't process that. Please contact us at +91 77807 62489.";
     
     console.log("AI response:", aiResponse);
 
@@ -100,7 +103,7 @@ Be friendly, professional, and helpful. Keep responses concise but informative. 
   } catch (error) {
     console.error("Chat AI error:", error);
     return new Response(JSON.stringify({ 
-      error: "Something went wrong. Please try again or contact us via WhatsApp at +91 80191 30798." 
+      error: "Something went wrong. Please try again or contact us via WhatsApp at +91 77807 62489." 
     }), {
       status: 500,
       headers: { ...corsHeaders, "Content-Type": "application/json" },

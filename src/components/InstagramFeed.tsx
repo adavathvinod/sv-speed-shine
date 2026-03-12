@@ -1,49 +1,19 @@
 import { Instagram, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import gallery1 from "@/assets/gallery-1.jpeg";
-import gallery2 from "@/assets/gallery-2.jpeg";
-import gallery3 from "@/assets/gallery-3.jpeg";
-import gallery4 from "@/assets/gallery-4.jpeg";
-import gallery5 from "@/assets/gallery-5.jpeg";
-import hero1 from "@/assets/hero-1.jpg";
+import skGallery1 from "@/assets/sk-gallery-1.png";
+import skGallery2 from "@/assets/sk-gallery-2.png";
+import skGallery3 from "@/assets/sk-gallery-3.png";
+import skGallery4 from "@/assets/sk-gallery-4.png";
+import skGallery5 from "@/assets/sk-gallery-5.png";
+import skHero1 from "@/assets/sk-hero-1.png";
 
 const instagramPosts = [
-  {
-    id: 1,
-    image: gallery1,
-    likes: 234,
-    caption: "PPF installation on this stunning BMW 🔥",
-  },
-  {
-    id: 2,
-    image: gallery2,
-    likes: 189,
-    caption: "Ceramic coating transformation ✨",
-  },
-  {
-    id: 3,
-    image: gallery3,
-    likes: 312,
-    caption: "Fresh graphene coating on Audi Q7 🚗",
-  },
-  {
-    id: 4,
-    image: gallery4,
-    likes: 156,
-    caption: "Interior detailing perfection 💎",
-  },
-  {
-    id: 5,
-    image: gallery5,
-    likes: 278,
-    caption: "Another happy customer! ⭐",
-  },
-  {
-    id: 6,
-    image: hero1,
-    likes: 421,
-    caption: "Premium car spa experience 🏆",
-  },
+  { id: 1, image: skGallery1, likes: 234, caption: "Hyundai Creta looking fresh after detailing 🔥" },
+  { id: 2, image: skGallery2, likes: 189, caption: "Land Rover Defender at our studio ✨" },
+  { id: 3, image: skGallery3, likes: 312, caption: "Mahindra Thar ready for PPF protection 🚗" },
+  { id: 4, image: skGallery4, likes: 156, caption: "Royal Enfield Interceptor detailing 💎" },
+  { id: 5, image: skGallery5, likes: 278, caption: "Stunning red beauty ready for delivery ⭐" },
+  { id: 6, image: skHero1, likes: 421, caption: "Premium car care experience 🏆" },
 ];
 
 const InstagramFeed = () => {
@@ -58,7 +28,7 @@ const InstagramFeed = () => {
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            <span className="text-primary">@</span>SVCARZ_SPA
+            <span className="text-primary">@</span>SK_CARZ._
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
             Follow us on Instagram for daily car transformations, behind-the-scenes content, and exclusive offers
@@ -69,7 +39,7 @@ const InstagramFeed = () => {
           {instagramPosts.map((post, index) => (
             <a
               key={post.id}
-              href="https://instagram.com"
+              href="https://www.instagram.com/sk_carz._"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative aspect-square overflow-hidden rounded-lg"
@@ -95,7 +65,7 @@ const InstagramFeed = () => {
         </div>
 
         <div className="text-center mt-10">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/sk_carz._" target="_blank" rel="noopener noreferrer">
             <Button variant="outline" size="lg" className="group">
               <Instagram className="h-5 w-5 mr-2 group-hover:text-primary transition-colors" />
               Follow Us on Instagram
