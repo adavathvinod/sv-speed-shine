@@ -9,16 +9,12 @@ import Layout from "@/components/layout/Layout";
 const services = [
   "PPF (Paint Protection Film)",
   "Ceramic Coating",
-  "Teflon Coating",
-  "Interior Spa",
-  "Exterior Cleaning",
-  "Custom Seat Covers",
-  "Car Matting",
-  "Window Tinting",
-  "Custom Wrapping",
-  "Denting & Painting",
-  "Audio Upgrade",
-  "Premium Car Wash",
+  "Graphene Coating",
+  "Interior Detailing",
+  "Exterior Detailing",
+  "Full Car Wash",
+  "Paint Correction",
+  "Wheel Alignment & Balancing",
   "Other",
 ];
 
@@ -49,6 +45,7 @@ const Booking = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Basic validation
     if (!formData.name || !formData.phone || !formData.service || !formData.date || !formData.time) {
       toast({
         title: "Missing Information",
@@ -58,13 +55,15 @@ const Booking = () => {
       return;
     }
 
+    // In production, this would send to a backend
     toast({
       title: "Booking Request Sent!",
       description: "We'll contact you shortly to confirm your appointment.",
     });
 
-    const message = `Hi SK CARZ! I'd like to book an appointment:\n\nName: ${formData.name}\nPhone: ${formData.phone}\nCar: ${formData.carModel}\nService: ${formData.service}\nDate: ${formData.date}\nTime: ${formData.time}\n\n${formData.message}`;
-    window.open(`https://wa.me/917780762489?text=${encodeURIComponent(message)}`, "_blank");
+    // WhatsApp redirect with booking details
+    const message = `Hi SV CARZ! I'd like to book an appointment:\n\nName: ${formData.name}\nPhone: ${formData.phone}\nCar: ${formData.carModel}\nService: ${formData.service}\nDate: ${formData.date}\nTime: ${formData.time}\n\n${formData.message}`;
+    window.open(`https://wa.me/918019130798?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   return (
@@ -133,7 +132,7 @@ const Booking = () => {
                   <div>
                     <label className="block text-sm font-semibold mb-2">Car Make & Model</label>
                     <Input
-                      placeholder="e.g., Hyundai Creta, Mahindra Thar"
+                      placeholder="e.g., BMW 3 Series, Audi Q5"
                       value={formData.carModel}
                       onChange={(e) => setFormData({ ...formData, carModel: e.target.value })}
                       className="bg-secondary border-border"

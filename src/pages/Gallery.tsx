@@ -1,24 +1,56 @@
 import { useState } from "react";
 import Layout from "@/components/layout/Layout";
-import skGallery1 from "@/assets/sk-gallery-1.png";
-import skGallery2 from "@/assets/sk-gallery-2.png";
-import skGallery3 from "@/assets/sk-gallery-3.png";
-import skGallery4 from "@/assets/sk-gallery-4.png";
-import skGallery5 from "@/assets/sk-gallery-5.png";
-import skHero1 from "@/assets/sk-hero-1.png";
-import skServicesBoard from "@/assets/sk-services-board.png";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import gallery1 from "@/assets/gallery-1.jpeg";
+import gallery2 from "@/assets/gallery-2.jpeg";
+import gallery3 from "@/assets/gallery-3.jpeg";
+import gallery4 from "@/assets/gallery-4.jpeg";
+import gallery5 from "@/assets/gallery-5.jpeg";
+import gallery6 from "@/assets/gallery-6.png";
+import gallery7 from "@/assets/gallery-7.png";
+import gallery8 from "@/assets/gallery-8.png";
+import gallery9 from "@/assets/gallery-9.png";
+import gallery10 from "@/assets/gallery-10.png";
+import hero1 from "@/assets/hero-1.jpg";
+import hero2 from "@/assets/hero-2.jpg";
+import hero3 from "@/assets/hero-3.jpg";
+import before1 from "@/assets/before-1.jpg";
+import after1 from "@/assets/after-1.jpg";
+import before2 from "@/assets/before-2.jpg";
+import after2 from "@/assets/after-2.jpg";
 
 const galleryImages = [
-  { src: skHero1, category: "Interior", title: "SK CARZ Studio - Premium Bay" },
-  { src: skGallery1, category: "Detailing", title: "Hyundai Creta - Full Detailing" },
-  { src: skGallery2, category: "Exterior", title: "Land Rover Defender at Studio" },
-  { src: skGallery3, category: "PPF", title: "Mahindra Thar - PPF Protection" },
-  { src: skGallery4, category: "Detailing", title: "Royal Enfield Interceptor Detail" },
-  { src: skGallery5, category: "Exterior", title: "Red Beauty - Ceramic Coating" },
-  { src: skServicesBoard, category: "Interior", title: "Our Services Board" },
+  { src: gallery1, category: "Interior", title: "Hexagon LED Detailing Bay" },
+  { src: gallery2, category: "Exterior", title: "Mini Cooper S - PPF Application" },
+  { src: gallery3, category: "Detailing", title: "SUV Under Inspection Lights" },
+  { src: gallery4, category: "Exterior", title: "Mahindra Thar Fleet" },
+  { src: gallery5, category: "Exterior", title: "Premium Cars at SV CARZ" },
+  { src: gallery6, category: "Detailing", title: "Keeway 302 - Custom Detailing" },
+  { src: gallery7, category: "Ceramic", title: "Tata Harrier - Ceramic Coating" },
+  { src: gallery8, category: "PPF", title: "Mahindra BE 6 - PPF Protection" },
+  { src: gallery9, category: "PPF", title: "Ford Endeavour - Full PPF" },
+  { src: gallery10, category: "Detailing", title: "Jawa 42 - Premium Polish" },
+  { src: hero1, category: "Detailing", title: "Lamborghini Urus Detailing" },
+  { src: hero2, category: "Ceramic", title: "BMW M4 Ceramic Coating" },
+  { src: hero3, category: "PPF", title: "Audi RS7 PPF Installation" },
 ];
 
-const categories = ["All", "Exterior", "Interior", "Detailing", "PPF"];
+const beforeAfterComparisons = [
+  {
+    before: before1,
+    after: after1,
+    title: "Exterior Paint Correction",
+    category: "Exterior",
+  },
+  {
+    before: before2,
+    after: after2,
+    title: "Interior Deep Cleaning",
+    category: "Interior",
+  },
+];
+
+const categories = ["All", "Exterior", "Interior", "Detailing", "Ceramic", "PPF"];
 
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -37,8 +69,30 @@ const Gallery = () => {
           <span className="text-primary font-semibold tracking-widest">OUR WORK</span>
           <h1 className="font-display text-5xl md:text-6xl mt-2 mb-4">GALLERY</h1>
           <p className="text-muted-foreground text-xl max-w-2xl mx-auto">
-            Explore our portfolio of premium car detailing and customization work
+            Explore our portfolio of premium car detailing work on luxury vehicles
           </p>
+        </div>
+      </section>
+
+      {/* Before/After Comparisons */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <span className="text-primary font-semibold tracking-widest">TRANSFORMATIONS</span>
+            <h2 className="font-display text-4xl md:text-5xl mt-2">BEFORE & AFTER</h2>
+            <p className="text-muted-foreground mt-2">Drag the slider to see the transformation</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {beforeAfterComparisons.map((comparison, index) => (
+              <BeforeAfterSlider
+                key={index}
+                beforeImage={comparison.before}
+                afterImage={comparison.after}
+                title={comparison.title}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
